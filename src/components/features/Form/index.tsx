@@ -1,4 +1,5 @@
 import React from "react";
+import InputField from "../../standard-elements/InputField";
 
 const Form = () => {
   return (
@@ -11,13 +12,10 @@ const Form = () => {
           Welcome
         </h1>
       </div>
-      <form className="flex flex-col">
-        <label>Name</label>
-        <input />
-        <label>Height</label>
-        <input />
-        <label>Email</label>
-        <input />
+      <form className="flex flex-col ">
+        <InputField label="Name :" value="" setValue={() => true} />
+        <InputField label="Email :" value="" setValue={() => true} />
+        <InputField label="Height (cm) :" value="" setValue={() => true} />
       </form>
     </div>
   );

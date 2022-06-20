@@ -1,16 +1,20 @@
-import React from "react";
+import React, { ChangeEventHandler } from "react";
 
 const InputField = ({
+  name,
   label,
   value,
   setValue,
+  setBlur,
 }: {
+  name: string;
   label: string;
   value: string;
-  setValue: (value: number) => void;
+  setBlur: ChangeEventHandler<HTMLInputElement>;
+  setValue: ChangeEventHandler<HTMLInputElement>;
 }) => {
   return (
-    <div className="flex flex-col min-w-[10rem]  mb-7">
+    <div className="flex flex-col min-w-[10rem]  mt-7">
       <label
         className="w-full text-left font-poppins font-semibold text-[16px]"
         htmlFor={label}
@@ -18,8 +22,11 @@ const InputField = ({
         {label}
       </label>
       <input
-        className="w-full bg-[transparent] border-secondary border-y-0 border-t-0 border-b-[2px] focus:border-primaryDark focus:bg-primaryLight outline-none"
+        name={name}
+        className=" px-2 w-full bg-[transparent] border-secondary border-y-0 border-t-0 border-b-[2px] focus:border-primaryDark focus:bg-primaryLight outline-none"
         id={label}
+        onChange={setValue}
+        onBlur={setBlur}
       />
     </div>
   );

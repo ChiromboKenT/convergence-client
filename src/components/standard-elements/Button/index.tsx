@@ -13,7 +13,8 @@ const Button = ({
 }) => {
   const buttonStyles = {
     primary: "bg-primary text-white border-secondary hover:bg-primarylight",
-    secondary: "bg-secondary  border-primary hover:bg-primary",
+    secondary:
+      "bg-secondary  border-primary hover:bg-primary hover:border-secondary active:shadow-none",
     outline: "bg-[#fff] text-primary border-primary hover:bg-secondary",
   };
   return (
